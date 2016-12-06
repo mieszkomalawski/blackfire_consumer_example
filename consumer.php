@@ -12,6 +12,7 @@ function consume()
 }
 
 $blackfire = new LoopClient(new Client(), 10);
+$blackfire->setSignal(SIGUSR1);
 $profileConfig = new ProfileConfiguration();
 $profileConfig->setTitle('Consumer');
 
