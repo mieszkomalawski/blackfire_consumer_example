@@ -1,0 +1,5 @@
+{
+    "require": {
+        "blackfire/php-sdk": "^1.5"
+    }
+}
