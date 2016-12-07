@@ -9,6 +9,9 @@ use Blackfire\Profile\Configuration as ProfileConfiguration;
 function consume()
 {
     echo "Message consumed!\n";
+    $data = json_decode('{"foo": "bar"}');
+    file_put_contents('data', $data);
+    usleep(400000);
 }
 
 $blackfire = new LoopClient(new Client(), 10);
@@ -24,6 +27,4 @@ for (;;) {
     if ($profile = $blackfire->endLoop()) {
         print $profile->getUrl()."\n";
     }
-
-    usleep(400000);
 }
